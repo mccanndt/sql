@@ -12,7 +12,7 @@ CREATE TABLE account (
 CREATE TABLE transaction (
 	ID int not null primary key auto_increment,
     amount decimal(20,2) not null,
-	txn_typaccountaccounte nvarchar(50) not null,
+	txn_type nvarchar(50) not null,
 	account_ID int not null,
     foreign key(account_ID) references account(ID)
 );
