@@ -2,19 +2,29 @@ DROP DATABASE IF EXISTS SqlBootcampExample;
 CREATE DATABASE SqlBootcampExample;
 use SqlBootcampExample;
 
+CREATE TABLE State (
+	Code nvarchar(2) not null primary key,
+    Name nvarchar(50) not null
+);
+
 CREATE TABLE Customer (
 	ID int not null primary key auto_increment,
 	Name nvarchar(50) not null,
 	City nvarchar(50) not null,
 	State nvarchar(2) not null,
 	Sales decimal(18,0) not null,
-	Active bit not null
+	Active bit not null,
+    FOREIGN KEY (State) REFERENCES State(Code)
 );
-
-CREATE TABLE State (
-	Code nvarchar(2) not null primary key,
-    Name nvarchar(50) not null
-);
+    
+Insert State (Code, Name) Values ('AL', 'Alabama');
+Insert State (Code, Name) Values ('CA', 'California');
+Insert State (Code, Name) Values ('HI', 'Hawaii');
+Insert State (Code, Name) Values ('NJ', 'New Jersey');
+Insert State (Code, Name) Values ('NV', 'Nevada');
+Insert State (Code, Name) Values ('OH', 'Ohio');
+Insert State (Code, Name) Values ('TX', 'Texas');
+Insert State (Code, Name) Values ('WA', 'Washington');
 
 Insert Customer (Name, City, State, Sales, Active) Values ('Acme, inc.','Jersey City','NJ',14381891,1);
 Insert Customer (Name, City, State, Sales, Active) Values ('Widget Corp','Seattle','WA',97865829,1);
@@ -30,12 +40,3 @@ Insert Customer (Name, City, State, Sales, Active) Values ('Demo, Inc.','Las Veg
 Insert into Customer (Name, City, State, Sales, Active) Values
 	('Super Cool Computers', 'Cincinnati', 'OH', 51234, 1),
 	('Target', 'Cincinnati', 'OH', 87655, 0);
-    
-Insert State (Code, Name) Values ('AL', 'Alabama');
-Insert State (Code, Name) Values ('CA', 'California');
-Insert State (Code, Name) Values ('HI', 'Hawaii');
-Insert State (Code, Name) Values ('NJ', 'New Jersey');
-Insert State (Code, Name) Values ('NV', 'Nevada');
-Insert State (Code, Name) Values ('OH', 'Ohio');
-Insert State (Code, Name) Values ('TX', 'Texas');
-Insert State (Code, Name) Values ('WA', 'Washington');
