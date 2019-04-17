@@ -11,10 +11,10 @@ CREATE TABLE account (
 
 CREATE TABLE transaction (
 	ID int not null primary key auto_increment,
-    amount decimal(20,2) not null,
+	amount decimal(20,2) not null,
 	txn_type nvarchar(50) not null,
 	account_ID int not null,
-    foreign key(account_ID) references account(ID)
+	foreign key(account_ID) references account(ID)
 );
 
 Insert account (account_holder, balance, fees) values ('Anna Bengel', 8888.00, 250.00);
