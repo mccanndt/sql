@@ -1,8 +1,8 @@
 use mma;
 SELECT i.OrderNumber as 'Order Number',
-	   l.ID as 'Line Item',
 	   i.CustomerName as 'Customer Name',
        i.OrderDate as 'Order Date',
+       l.ID as 'Line Item',
        p.Code as 'Item Code',
        p.Description,
        p.Price as 'Item Price',
