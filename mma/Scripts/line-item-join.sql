@@ -7,7 +7,7 @@ SELECT i.OrderNumber as 'Order Number',
        p.Description,
        p.Price as 'Item Price',
        l.Quantity,
-       i.Total as 'Grand Total'
+       l.Quantity * p.Price as 'Line Total'
 	FROM lineitem l
 		JOIN invoice i ON i.ID = l.InvoiceID
 		JOIN product p ON p.ID = l.ProductID
