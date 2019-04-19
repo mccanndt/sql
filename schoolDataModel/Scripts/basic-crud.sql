@@ -22,7 +22,6 @@ UPDATE instructor
 		lastName = 'Chan'
     WHERE courseID = 6;
     
-
 -- Delete
 INSERT INTO course VALUES (8, 999, 'TEST', 'NAME');
 DELETE FROM course WHERE ID = 8;
