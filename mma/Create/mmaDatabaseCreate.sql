@@ -38,8 +38,7 @@ INSERT INTO Product VALUES
 (4, 'android', 'Murach''s Android Programming', 57.50),
 (5, 'html5', 'Murach''s HTML5 and CSS3', 54.50),
 (6, 'oracle', 'Murach''s Oracle and PL/SQL', 54.50),
-(7, 'javascript', 'Murach''s JavaScript and jQuery', 57.50),
-(8,'test','test description',10.00);
+(7, 'javascript', 'Murach''s JavaScript and jQuery', 57.50);
 
 -- insert some test data for invoice and line item, based on products above
 INSERT INTO Invoice VALUES
@@ -50,5 +49,5 @@ INSERT INTO LineItem VALUES
 (2, 1, 5, 10);
 
 -- create a user and grant privileges to that user
-CREATE USER mma_user@localhost IDENTIFIED BY 'sesame';
+CREATE USER IF NOT EXISTS mma_user@localhost IDENTIFIED BY 'sesame';
 GRANT SELECT, INSERT, DELETE, UPDATE ON mma.* TO mma_user@localhost;
